@@ -1,0 +1,41 @@
+{
+  "name": "ScholarshipWidget",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/H3mann/NextGenVest"
+  },
+  "keywords": [],
+  "author": "Harpreet Mann",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/H3mann/NextGenVest"
+  },
+  "homepage": "https://github.com/H3mann/NextGenVest",
+  "dependencies": {
+    "bluebird": "^3.4.3",
+    "body-parser": "^1.15.2",
+    "cookie-parser": "^1.4.3",
+    "cors": "^2.7.1",
+    "express": "^4.14.0",
+    "express-jwt": "^3.0.1",
+    "express-session": "^1.14.0",
+    "jsonwebtoken": "^5.0.4",
+    "mongoose": "^4.1.2",
+    "morgan": "~1.5.1",
+    "underscore": "^1.8.3"
+  },
+  "devDependencies": {
+    "browser-sync": "^2.14.0",
+    "gulp": "^3.9.1",
+    "gulp-uglify": "^2.0.0",
+    "gulp-useref": "^3.1.0",
+    "pump": "^1.0.1"
+  }
+}
