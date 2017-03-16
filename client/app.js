@@ -1,6 +1,6 @@
 
 angular.module('Scholarships',
-	[ 'Scholarships.widgetView','ui.router',])
+	[ 'Scholarships.widgetView','ui.router'])
 
 
 .config(function($stateProvider, $urlRouterProvider){

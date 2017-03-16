@@ -30,6 +30,7 @@
     "jsonwebtoken": "^5.0.4",
     "mongoose": "^4.1.2",
     "morgan": "~1.5.1",
+    "n3-charts": "^2.0.28",
     "underscore": "^1.8.3"
   },
   "devDependencies": {
