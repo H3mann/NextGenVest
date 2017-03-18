@@ -1,31 +1,34 @@
 var app = angular.module('Scholarships.widgetView',['n3-line-chart'])
 
 
-
-
 app.controller('widgetController', function ($http, $scope, $location) {
 		
 	
-	$scope.submit = function(amount,loanPeriod) {
+	$scope.submit = function(amount,loanPeriod, interest, scholarship) {
+		
 		$scope.amount = amount
-	console.log($scope.amount,'amount')
-	$scope.loanPeriod = loanPeriod
+		$scope.interest = interest/100
+		$scope.scholarship = scholarship
+		$scope.loanPeriod =loanPeriod
 
-	
+	$scope.loanAmount = $scope.amount - $scope.scholarship
+
+	$scope.payment = ($scope.loanAmount + ($scope.loanAmount * $scope.interest))/$scope.loanPeriod
+
+	$scope.nextTotal = $scope.loanAmount - $scope.payment
+
   $scope.data = {
-    dataset0: [
-      {x: 0, val_0: $scope.amount, val_1: 0, val_2: 0, val_3: 0},
-      {x: 1, val_0: 2, val_1: 3.894, val_2: 8.47, val_3: 14.347},
-      {x: 2, val_0: 2, val_1: 7.174, val_2: 13.981, val_3: 19.991},
-      {x: 3, val_0: 2, val_1: 9.32, val_2: 14.608, val_3: 13.509},
-      {x: 4, val_0: 2, val_1: 9.996, val_2: 10.132, val_3: -1.167},
-      {x: 5, val_0: 2, val_1: 9.093, val_2: 2.117, val_3: -15.136}
-    ]
-  };
-  console.log($scope.data,'data!')
+  	dataset0: []
+  }
+
+	for (var i = 1; i <= $scope.loanPeriod; i ++) {
+		$scope.nextTotal = $scope.nextTotal - $scope.payment
+		if ($scope.nextTotal < 0) break
+		$scope.data.dataset0.push({x: i, val_0: $scope.nextTotal})
+	}
+
   $scope.options = {
     series: [
-     
        {
         axis: "y",
         dataset: "dataset0",
@@ -41,13 +44,6 @@ app.controller('widgetController', function ($http, $scope, $location) {
   };
 }
 
-
-	// $scope.firstname = ''
-	// console.log($scope.user.amount,'amount')
-	// console.log($scope.firstname,'firstname')
-
-
-
 	$scope.getLoanData = function () {
 
 		$http({
@@ -58,14 +54,21 @@ app.controller('widgetController', function ($http, $scope, $location) {
 		})
 		.then(function(response){
 			console.log(response,'response')
-			$scope.data = response.data
+			$scope.interestData = response.data
 		})
 		.catch(function(err){
 			console.log(err,'error in submit request')
 		})
 	}
 
+	$scope.getLoanData()
+
 })
+
+
+
+
+
 
 
 // app.directive('linearChart', function($window){

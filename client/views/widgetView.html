@@ -11,21 +11,51 @@
 
 		<div class="form-group">
 			<label> Loan Amount </label>
-			<input class='campaignName' type='text' ng-change= submit(amount) ng-model='amount'/> {{amount}}
+			<input class='campaignName' type='text' ng-model='amount'/> {{amount}}
 		</div>
 
 		<div class="form-group">
 			<label> Interest Rate </label>
-			<input class='campaignName' type='text' value= '' ng-model='user.interest'/> {{user.interest}}
+			<input class='campaignName' type='text' ng-model='interest'/> {{interest}}
 		</div>
 
 		<div class="form-group">
 			<label> Loan Period </label>
-			<input class='campaignName' type='text' value= '' ng-model='user.loanPeriod'/>
-
-			<button class= 'submitButton' type='submit' ng-click='submit(amount)'>SUBMIT</button>
+			<input class='campaignName' type='text' ng-model='loanPeriod'/> {{loanPeriod}}
 		</div>
+
+		<div class="form-group">
+			<label> Scholarship </label>
+			<input class='campaignName' type='text' ng-model='scholarship'/>
+		</div>
+
+			<button class= 'submitButton' type='submit' ng-click='submit(amount,loanPeriod,interest,scholarship)'>SUBMIT</button>
 	</form>
+	<div class='interestTable'>
+		<h2>Current Interest Rates </h2>
+		<table style="width:25%">
+		  <tr>
+		    <th>Type</th>
+		    <th>Interest</th> 
+		  </tr>
+		  <tr>
+		    <td>Private Bank Loan</td>
+		    <td>{{interestData.privateBankLoan}}</td>
+		  </tr>
+		  <tr>
+		    <td>University Loan</td>
+		    <td>{{interestData.universityLoan}}</td>
+		  </tr>
+		  <tr>
+		  	<td>Direct Subsidized Loan </td>
+		  	<td>{{interestData.directSubsidizedLoan}} </td>
+		  </tr>
+		  <tr>
+		  	<td> Direct Unsubsidized Loan </td>
+		  	<td>{{interestData.directUnsubsidizedLoan}} </td>
+		  </tr>
+	  </table>
+	</div>
 
 	<!-- <div linear-chart chart-data="loanData"></div> -->
 	    <div class="my-chart">
