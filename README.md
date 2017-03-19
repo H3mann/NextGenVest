@@ -24,8 +24,9 @@ Input your loan data to see an awesome data visualization of your loan and it's 
 1. Met all requirements in checklist - check.
 2. Widget 1 animations are creative - Creatively and clearly plots readable info!
 3. Good coding style - I code the way I dress, with good style! 
-4. Efficient code - You got it!Good and clear commit history - If my commit history was any better, this app might consider marrying me. 
-5. Clear README.md build instructions - Clear as a summers day.
+4. Efficient code - You got it!
+5. Good and clear commit history - If my commit history was any better, this app might consider marrying me. 
+6. Clear README.md build instructions - Clear as a summers day.
 
 ### Installation
 
