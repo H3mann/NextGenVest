@@ -1,9 +1,15 @@
 .interestTable h2 {
   color: #04a3f9;
-  font-size: 20px; }
+  font-size: 20px;
+  font-family: 'Raleway', sans-serif; }
+
+h1 {
+  color: #04a3f9;
+  font-size: 40px;
+  font-family: 'Raleway', sans-serif; }
 
 table {
-  font-family: arial, sans-serif;
+  font-family: 'Raleway', sans-serif;
   border-collapse: collapse;
   width: 100%; }
 
@@ -21,7 +27,8 @@ tr:nth-child(even) {
   width: 280px;
   float: left;
   height: 400px;
-  margin: 30px; }
+  margin: 30px;
+  font-family: 'Raleway', sans-serif; }
 
 .submitButton {
   background-color: #4CAF50;
@@ -43,7 +50,8 @@ tr:nth-child(even) {
 .submitButton {
   background-color: white;
   color: black;
-  border: 2px solid #4CAF50; }
+  border: 2px solid #4CAF50;
+  font-family: 'Raleway', sans-serif; }
 
 .submitButton:hover {
   background-color: #4CAF50;
@@ -52,7 +60,27 @@ tr:nth-child(even) {
 .my-chart {
   float: left;
   margin-top: 50px;
-  width: 800px; }
+  width: 800px;
+  font-family: 'Raleway', sans-serif; }
 
 .chart {
   width: 800px !important; }
+
+/*navigation*/
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+  font-family: 'Raleway', sans-serif; }
+
+li {
+  float: left; }
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none; }

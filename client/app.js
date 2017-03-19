@@ -5,15 +5,12 @@ angular.module('Scholarships',
 
 .config(function($stateProvider, $urlRouterProvider){
 
-$urlRouterProvider.otherwise('/')
+	$urlRouterProvider.otherwise('/')
 
-$stateProvider
-.state('home', {
-	url: '/',
-	templateUrl: '/views/widgetView.html',
-	controller: 'widgetController'
-})
-
-
-
+	$stateProvider
+	.state('home', {
+		url: '/',
+		template: '<loan-widget> </loan-widget>',
+		controller: 'widgetController'
+	})
 })

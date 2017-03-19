@@ -2,22 +2,19 @@ var app = angular.module('Scholarships.widgetView',['n3-line-chart'])
 
 
 app.controller('widgetController', function ($http, $scope, $location) {
-		
-	
-	$scope.submit = function(amount,loanPeriod, interest, scholarship) {
-		
-		$scope.amount = amount
-		$scope.interest = interest/100
-		$scope.scholarship = scholarship
-		$scope.loanPeriod =loanPeriod
 
-	$scope.loanAmount = $scope.amount - $scope.scholarship
+	this.submit = function(amount,loanPeriod, interest, scholarship) {
 
-	$scope.payment = ($scope.loanAmount + ($scope.loanAmount * $scope.interest))/$scope.loanPeriod
+	this.amount = amount
+	this.interest = interest/100
+	this.scholarship = scholarship
+	this.loanPeriod =loanPeriod
 
-	$scope.nextTotal = $scope.loanAmount - $scope.payment
+	this.loanAmount = this.amount - this.scholarship
+	this.payment = (this.loanAmount + (this.loanAmount * this.interest))/this.loanPeriod
+	this.nextTotal = this.loanAmount - this.payment
 
-  $scope.options = {
+  this.options = {
     series: [
        {
         axis: "y",
@@ -32,20 +29,17 @@ app.controller('widgetController', function ($http, $scope, $location) {
     axes: {x: {key: "x"}}
   };
 
-  $scope.data = {
-  	dataset0: [{x: 0, val_0: $scope.loanAmount}]
+  this.data = {
+  	dataset0: [{x: 0, val_0: this.loanAmount}]
   }
 
-	for (var i = 1; i <= $scope.loanPeriod; i ++) {
-		$scope.data.dataset0.push({x: i, val_0: $scope.nextTotal})
-		$scope.nextTotal = $scope.nextTotal - $scope.payment
-		if ($scope.nextTotal < 0) break
+	for (var i = 1; i <= this.loanPeriod; i ++) {
+		this.data.dataset0.push({x: i, val_0: this.nextTotal})
+		this.nextTotal = this.nextTotal - this.payment
+		if (this.nextTotal < 0) break
 	}
-
 }
-
 	$scope.getLoanData = function () {
-
 		$http({
 			'method': 'GET',
 			'url': '/loanData',
@@ -63,13 +57,13 @@ app.controller('widgetController', function ($http, $scope, $location) {
 	$scope.getLoanData()
 
 })
-
-app.directive('itemsContainer', function() {
+.directive('loanWidget', function() {
   return {
-    controller: 'ItemsContainerController',
+    controller: 'widgetController',
     controllerAs: 'ctrl',
     bindToController: true,
-    templateUrl: 'items-container.html'
+    scope: true,
+    templateUrl: 'views/widgetView.html'
   };
 });
 
