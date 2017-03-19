@@ -1,4 +1,4 @@
-# NextGenVest
+## NextGenVest
 Loan.Plotter
 Plot Your Future Today!
 
@@ -7,11 +7,10 @@ Plot Your Future Today!
 Tech Stack: AngularJS/Node/Express/
 
 Description: A widget that plots loan payments via a easily readable chart
+Input your loan data to see an awesome data visualization of your loan and it's payments 
+'Coming Soon' contains future features for the widget
 
-Input your loan data to see an awesome data visualization of your loan and it's payments.
-
-Coming soon contains future features for the widget
-
+#### Judging Criteria
 [x] Your widget is an angular component  
 [x] Styling is done with SASS  
 [x] Widget shows a graph (or similar) of expected payoff amount given a payoff date   
@@ -22,13 +21,10 @@ Coming soon contains future features for the widget
 [x] The rate is fetched by the nodejs server  
 [x] Your project has a README.md with build instructions  
 
-## Judging criteria
-
 Met all requirements in checklist - check.
 Widget 1 animations are creative - Creatively and clearly plots readable info!
 Good coding style - I code the way I dress, with good style! 
-Efficient code - You got it!
-Good and clear commit history - If my commit history was any better, this app might consider marrying me. 
+Efficient code - You got it!Good and clear commit history - If my commit history was any better, this app might consider marrying me. 
 Clear README.md build instructions - Clear as a summers day.
 
 ### Installation
