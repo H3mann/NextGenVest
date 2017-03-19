@@ -4,7 +4,7 @@ Plot Your Future Today!
 
 ### Main features
 
-Tech Stack: AngularJS/Node/Express/
+Tech Stack: AngularJS/Node/Express/D3
 
 Description: A widget that plots loan payments via a easily readable chart
 Input your loan data to see an awesome data visualization of your loan and it's payments 
