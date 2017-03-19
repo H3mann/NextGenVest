@@ -23,11 +23,11 @@ app.use("/", express.static(__dirname + "/client/"));
 
 app.get('/loanData', function(req,res) {
 	var data = {
-	privateBankLoan: 4.2,
-	universityLoan: 4.0,
-	directSubsidizedLoan: 3.76,
-	directUnsubsidizedLoan: 3.76
-}
+		privateBankLoan: 4.2,
+		universityLoan: 4.0,
+		directSubsidizedLoan: 3.76,
+		directUnsubsidizedLoan: 3.76
+	}
 	console.log('we')
 	res.send(data);
 })

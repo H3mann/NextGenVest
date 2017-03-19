@@ -1,13 +1,9 @@
 
 
-
-
-
-
 	<div ng-controller='widgetController'>
 
 	
-	<form>
+	<form class="submitForm">
 
 		<div class="form-group">
 			<label> Loan Amount </label>
@@ -31,7 +27,10 @@
 
 			<button class= 'submitButton' type='submit' ng-click='submit(amount,loanPeriod,interest,scholarship)'>SUBMIT</button>
 	</form>
+	
+
 	<div class='interestTable'>
+
 		<h2>Current Interest Rates </h2>
 		<table style="width:25%">
 		  <tr>

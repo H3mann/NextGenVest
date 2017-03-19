@@ -1,0 +1,58 @@
+.interestTable h2 {
+  color: #04a3f9;
+  font-size: 20px; }
+
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%; }
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px; }
+
+tr:nth-child(even) {
+  background-color: #dddddd; }
+
+.submitForm {
+  padding: 40px;
+  border: 1px solid black;
+  width: 280px;
+  float: left;
+  height: 400px;
+  margin: 30px; }
+
+.submitButton {
+  background-color: #4CAF50;
+  /* Green */
+  border: none;
+  color: white;
+  padding: 12px 24px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  margin-left: 18px;
+  -webkit-transition-duration: 0.4s;
+  /* Safari */
+  transition-duration: 0.4s;
+  cursor: pointer; }
+
+.submitButton {
+  background-color: white;
+  color: black;
+  border: 2px solid #4CAF50; }
+
+.submitButton:hover {
+  background-color: #4CAF50;
+  color: white; }
+
+.my-chart {
+  float: left;
+  margin-top: 50px;
+  width: 800px; }
+
+.chart {
+  width: 800px !important; }

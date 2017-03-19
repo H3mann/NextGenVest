@@ -17,16 +17,6 @@ app.controller('widgetController', function ($http, $scope, $location) {
 
 	$scope.nextTotal = $scope.loanAmount - $scope.payment
 
-  $scope.data = {
-  	dataset0: []
-  }
-
-	for (var i = 1; i <= $scope.loanPeriod; i ++) {
-		$scope.nextTotal = $scope.nextTotal - $scope.payment
-		if ($scope.nextTotal < 0) break
-		$scope.data.dataset0.push({x: i, val_0: $scope.nextTotal})
-	}
-
   $scope.options = {
     series: [
        {
@@ -38,10 +28,20 @@ app.controller('widgetController', function ($http, $scope, $location) {
         type: ['line', 'dot', 'area'],
         id: 'mySeries0'
       },
-
     ],
     axes: {x: {key: "x"}}
   };
+
+  $scope.data = {
+  	dataset0: [{x: 0, val_0: $scope.loanAmount}]
+  }
+
+	for (var i = 1; i <= $scope.loanPeriod; i ++) {
+		$scope.data.dataset0.push({x: i, val_0: $scope.nextTotal})
+		$scope.nextTotal = $scope.nextTotal - $scope.payment
+		if ($scope.nextTotal < 0) break
+	}
+
 }
 
 	$scope.getLoanData = function () {
@@ -50,7 +50,6 @@ app.controller('widgetController', function ($http, $scope, $location) {
 			'method': 'GET',
 			'url': '/loanData',
 			'Content-Type': 'application/json'
-
 		})
 		.then(function(response){
 			console.log(response,'response')
@@ -65,84 +64,12 @@ app.controller('widgetController', function ($http, $scope, $location) {
 
 })
 
+app.directive('itemsContainer', function() {
+  return {
+    controller: 'ItemsContainerController',
+    controllerAs: 'ctrl',
+    bindToController: true,
+    templateUrl: 'items-container.html'
+  };
+});
 
-
-
-
-
-
-// app.directive('linearChart', function($window){
-//    return{
-//       restrict:'EA',
-//       template:"<svg width='850' height='200'></svg>",
-//        link: function(scope, elem, attrs){
-//            var loanDataToPlot=scope[attrs.chartData];
-//            var padding = 20;
-//            var pathClass="path";
-//            var xScale, yScale, xAxisGen, yAxisGen, lineFun;
-
-//            var d3 = $window.d3;
-//            console.log('here',d3)
-//            var rawSvg=elem.find('svg');
-//            var svg = d3.select(rawSvg[0]);
-
-//            function setChartParameters(){
-
-//                xScale = d3.scale.linear()
-//                    .domain([loanDataToPlot[0].loanPeriod, loanDataToPlot[loanDataToPlot.length-1].loanPeriod])
-//                    .range([padding + 5, rawSvg.attr("width") - padding]);
-
-//                yScale = d3.scale.linear()
-//                    .domain([0, d3.max(loanDataToPlot, function (d) {
-//                        return d.loanAmount;
-//                    })])
-//                    .range([rawSvg.attr("height") - padding, 0]);
-
-//                xAxisGen = d3.svg.axis()
-//                    .scale(xScale)
-//                    .orient("bottom")
-//                    .ticks(loanDataToPlot.length - 1);
-
-//                yAxisGen = d3.svg.axis()
-//                    .scale(yScale)
-//                    .orient("left")
-//                    .ticks(5);
-
-//                lineFun = d3.svg.line()
-//                    .x(function (d) {
-//                        return xScale(d.loanPeriod);
-//                    })
-//                    .y(function (d) {
-//                        return yScale(d.loanAmount);
-//                    })
-//                    .interpolate("basis");
-//            }
-         
-//          function drawLineChart() {
-
-//                setChartParameters();
-
-//                svg.append("svg:g")
-//                    .attr("class", "x axis")
-//                    .attr("transform", "translate(0,180)")
-//                    .call(xAxisGen);
-
-//                svg.append("svg:g")
-//                    .attr("class", "y axis")
-//                    .attr("transform", "translate(20,0)")
-//                    .call(yAxisGen);
-
-//                svg.append("svg:path")
-//                    .attr({
-//                        d: lineFun(loanDataToPlot),
-//                        "stroke": "blue",
-//                        "stroke-width": 2,
-//                        "fill": "none",
-//                        "class": pathClass
-//                    });
-//            }
-
-//            drawLineChart();
-//        }
-//    };
-// });
