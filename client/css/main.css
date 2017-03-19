@@ -1,15 +1,25 @@
+/*When using node-sass the following command in the terminal 
+sets a watcher to compile SCSS right away: $ node-sass -o css css -w*/
+/*variables*/
 .interestTable h2 {
   color: #04a3f9;
   font-size: 20px;
-  font-family: 'Raleway', sans-serif; }
+  font-family: "Raleway", sans-serif; }
 
 h1 {
   color: #04a3f9;
   font-size: 40px;
-  font-family: 'Raleway', sans-serif; }
+  font-family: "Raleway", sans-serif;
+  margin-left: 20px; }
+
+.blurb {
+  color: #04a3f9;
+  font-family: "Raleway", sans-serif;
+  font-size: 28px;
+  margin-left: 20px; }
 
 table {
-  font-family: 'Raleway', sans-serif;
+  font-family: "Raleway", sans-serif;
   border-collapse: collapse;
   width: 100%; }
 
@@ -28,7 +38,7 @@ tr:nth-child(even) {
   float: left;
   height: 400px;
   margin: 30px;
-  font-family: 'Raleway', sans-serif; }
+  font-family: "Raleway", sans-serif; }
 
 .submitButton {
   background-color: #4CAF50;
@@ -51,7 +61,7 @@ tr:nth-child(even) {
   background-color: white;
   color: black;
   border: 2px solid #4CAF50;
-  font-family: 'Raleway', sans-serif; }
+  font-family: "Raleway", sans-serif; }
 
 .submitButton:hover {
   background-color: #4CAF50;
@@ -61,7 +71,7 @@ tr:nth-child(even) {
   float: left;
   margin-top: 50px;
   width: 800px;
-  font-family: 'Raleway', sans-serif; }
+  font-family: "Raleway", sans-serif; }
 
 .chart {
   width: 800px !important; }
@@ -73,7 +83,7 @@ ul {
   padding: 0;
   overflow: hidden;
   background-color: #333;
-  font-family: 'Raleway', sans-serif; }
+  font-family: "Raleway", sans-serif; }
 
 li {
   float: left; }
@@ -84,3 +94,12 @@ li a {
   text-align: center;
   padding: 14px 16px;
   text-decoration: none; }
+
+.comingSoon {
+  font-family: "Raleway", sans-serif;
+  padding: 20px;
+  border: 2px solid #4CAF50;
+  height: 400px;
+  width: 400px;
+  margin-left: 40px;
+  margin-top: 40px; }

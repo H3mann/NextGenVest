@@ -6,8 +6,6 @@ var bodyParser = require("body-parser");
 var cors = require("cors");
 // var router = require('./server/routes/routes.js')
 
-
-console.log('here')
 var port = process.env.PORT || 3000; 
 // require('./server/models/db.js')
 
@@ -21,6 +19,7 @@ app.use(bodyParser.json());
 //set static file location
 app.use("/", express.static(__dirname + "/client/"));
 
+//loan data end point - sending back interest rates
 app.get('/loanData', function(req,res) {
 	var data = {
 		privateBankLoan: 4.2,
@@ -28,11 +27,8 @@ app.get('/loanData', function(req,res) {
 		directSubsidizedLoan: 3.76,
 		directUnsubsidizedLoan: 3.76
 	}
-	console.log('we')
 	res.send(data);
 })
-
-
 /* API Routes */
 // app.use("/api", apiRouter);
 // app.use(router)

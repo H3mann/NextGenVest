@@ -1,5 +1,12 @@
 
+/*When using node-sass the following command in the terminal 
+sets a watcher to compile SCSS right away: $ node-sass -o css css -w*/
+
+/*variables*/
 $blue: #04a3f9;
+$raleway: 'Raleway';
+$borderColor: #dddddd;
+$sansSerif: sans-serif;
 
 
 .interestTable {
@@ -7,31 +14,38 @@ $blue: #04a3f9;
   h2 {
   	color: $blue;
   	font-size: 20px;
-  	font-family: 'Raleway', sans-serif;
+  	font-family: $raleway, $sansSerif;
   	} 
 }
 
 h1 {
   	color: $blue;
   	font-size: 40px;
-  	font-family: 'Raleway', sans-serif;
-  	} 
+  	font-family: $raleway, $sansSerif;
+  	margin-left: 20px;
+  } 
 
+.blurb {
+	color: $blue;
+	font-family: $raleway, $sansSerif;
+	font-size: 28px;
+	margin-left: 20px;
+}
 
 table {
-    font-family: 'Raleway', sans-serif;
+    font-family: $raleway, $sansSerif;
     border-collapse: collapse;
     width: 100%;
 }
 
 td, th {
-    border: 1px solid #dddddd;
+    border: 1px solid $borderColor;
     text-align: left;
     padding: 8px;
 }
 
 tr:nth-child(even) {
-    background-color: #dddddd;
+    background-color: $borderColor;
 }
 
 .submitForm {
@@ -42,7 +56,7 @@ tr:nth-child(even) {
 	float:left; 
 	height:400px; 
 	margin:30px;
-	font-family: 'Raleway', sans-serif;
+	font-family: $raleway, $sansSerif;
 
 }
 
@@ -66,7 +80,7 @@ tr:nth-child(even) {
     background-color: white; 
     color: black; 
     border: 2px solid #4CAF50;
-    font-family: 'Raleway', sans-serif;
+    font-family: $raleway, $sansSerif;
 }
 
 .submitButton:hover {
@@ -78,7 +92,7 @@ tr:nth-child(even) {
 	float: left;
 	margin-top: 50px;
 	width: 800px;
-	font-family: 'Raleway', sans-serif;
+	font-family: $raleway, $sansSerif;
 }
 
 .chart {
@@ -93,7 +107,7 @@ ul {
     padding: 0;
     overflow: hidden;
     background-color: #333;
-    font-family: 'Raleway', sans-serif;
+    font-family: $raleway, $sansSerif;
 }
 
 li {
@@ -106,6 +120,16 @@ li a {
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
+}
+
+.comingSoon {
+	font-family: $raleway, $sansSerif;
+	padding: 20px;
+	border: 2px solid #4CAF50;
+	height: 400px;
+	width: 400px;
+	margin-left: 40px;
+	margin-top: 40px
 }
 
 
