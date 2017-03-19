@@ -1,13 +1,13 @@
 ## NextGenVest
-Loan.Plotter
+Loan.Plotter -
 Plot Your Future Today!
 
 ### Main features
 
 Tech Stack: AngularJS/Node/Express/D3
 
-Description: A widget that plots loan payments via a easily readable chart
-Input your loan data to see an awesome data visualization of your loan and it's payments 
+Description: A widget that plots loan payments via a easily readable chart.    
+Input your loan data to see an awesome data visualization of your loan and it's payments.   
 'Coming Soon' contains future features for the widget
 
 #### Judging Criteria
